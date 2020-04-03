@@ -1,0 +1,36 @@
+
+{% extends 'layout.html' %}
+
+
+
+<body>
+{% block contents %}
+<form method="POST">
+{% csrf_token %}
+   Enter Name<input type="text" name="name" value="">
+             <input type="submit" value="SUBMIT">
+
+     <div>
+
+              {% for row in f %}
+                <h2>Detail Information</h2>
+              <ul>
+                  <li>First Name: {{row.first_Name}}</li>
+                  <li>Last Name: {{row.last_Name}}</li>
+                   <li>Client Value USD: {{row.clientValue_USD}}</li>
+                   <li>Email: {{row.email}}</li>
+                   <li>Website Details: {{row.website}}</li>
+                   <li>Address: {{row.address}}</li>
+              </ul>
+
+              {% endfor %}
+
+          </div>
+
+</form>
+
+
+
+{% endblock %}
+</body>
+
